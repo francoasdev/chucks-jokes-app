@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @favorite_joke %>
+
+<div>
+  <%= link_to "Edit this favorite joke", edit_favorite_joke_path(@favorite_joke) %> |
+  <%= link_to "Back to favorite jokes", favorite_jokes_path %>
+
+  <%= button_to "Destroy this favorite joke", @favorite_joke, method: :delete %>
+</div>

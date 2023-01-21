@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Favorite jokes</h1>
+
+<div id="favorite_jokes">
+  <% @favorite_jokes.each do |favorite_joke| %>
+    <%= render favorite_joke %>
+    <p>
+      <%= link_to "Show this favorite joke", favorite_joke %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New favorite joke", new_favorite_joke_path %>

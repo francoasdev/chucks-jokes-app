@@ -1,0 +1,10 @@
+<h1>Editing favorite joke</h1>
+
+<%= render "form", favorite_joke: @favorite_joke %>
+
+<br>
+
+<div>
+  <%= link_to "Show this favorite joke", @favorite_joke %> |
+  <%= link_to "Back to favorite jokes", favorite_jokes_path %>
+</div>

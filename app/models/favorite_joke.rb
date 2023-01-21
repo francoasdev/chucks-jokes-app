@@ -1,0 +1,2 @@
+class FavoriteJoke < ApplicationRecord
+end

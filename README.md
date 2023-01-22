@@ -1,6 +1,6 @@
 # README
 
-![Chuck](https://github.com/zFranco1/chucks-jokes-app/app/assets/images/demo.png)
+![Chuck](https://github.com/francoasdev/chucks-jokes-app/app/assets/images/demo.png)
 
 Chucks Jokes App
 

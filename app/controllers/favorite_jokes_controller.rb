@@ -1,10 +1,10 @@
 class FavoriteJokesController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :set_favorite_joke, only: %i[ show edit update destroy ]
 
   # GET /favorite_jokes or /favorite_jokes.json
   def index
-    @favorite_jokes = FavoriteJoke.all.order(id: :desc)
+    @favorite_jokes = current_user.favorite_jokes.all.order(id: :desc)
   end
 
   # GET /favorite_jokes/1 or /favorite_jokes/1.json
@@ -61,13 +61,13 @@ class FavoriteJokesController < ApplicationController
 
   private
 
-    # def authenticate_user!
-    #   if user_signed_in?
-    #     super
-    #   else
-    #     redirect_to new_user_session_path
-    #   end
-    # end
+    def authenticate_user!
+      if user_signed_in?
+        super
+      else
+        redirect_to new_user_session_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite_joke
       @favorite_joke = FavoriteJoke.find(params[:id])

@@ -1,5 +1,9 @@
 # README
 
+![This is an image](https://prnt.sc/jygxkBesCxOJ)
+
+Chucks Jokes App
+
 This is an app made entirely in Ruby On Rails.
 
 As an user, you can get jokes (as many as you want) and save the ones you likes.

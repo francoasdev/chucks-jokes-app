@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app made entirely in Ruby On Rails.
 
-Things you may want to cover:
+As an user, you can get jokes (as many as you want) and save the ones you likes.
 
-* Ruby version
+The app was made using https://api.chucknorris.io/ to get the jokes.
 
-* System dependencies
+The jokes are fetched through the API using the standard module net/http, using a service for that purpose.
 
-* Configuration
+When user clicks to get a joke, the joke displays in a turbo_frame_tag and it's rendered automatically.
 
-* Database creation
+When user clicks to save the joke as favorite, it's persisted in the database.
 
-* Database initialization
+Favorite jokes belongs to each user, so you can see only the ones you liked.
 
-* How to run the test suite
+It was used devise for authentication.
 
-* Services (job queues, cache servers, search engines, etc.)
+Feel free to use the demo credentials: user: info@example.com password: example123
 
-* Deployment instructions
-
-* ...
+You can find the app deployed in the next link: http://chuck.fly.dev/

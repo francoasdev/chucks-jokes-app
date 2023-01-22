@@ -1,6 +1,5 @@
-<div id="<%= dom_id favorite_joke %>">
-  <section class="h-100">
-    <div class="container py-5">
+  <div id="new-joke" class="h-100">
+    <div class="container py-5 text-center">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
           <div class="card">
@@ -14,7 +13,10 @@
                           <blockquote class="blockquote mb-4">
                             <p>
                               <i class="bi bi-quote"></i>
-                              <span class="font-italic"><%= favorite_joke['value'] %></span>
+                              <span class="font-italic"><%= @joke['value'] %></span>
+                            </p>
+                            <p>
+                            <%= render 'form', favorite_joke: @joke %>
                             </p>
                           </blockquote>
                         </figure>
@@ -29,5 +31,4 @@
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>

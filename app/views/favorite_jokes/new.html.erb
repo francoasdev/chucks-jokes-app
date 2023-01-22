@@ -1,9 +1,3 @@
-<h1>New favorite joke</h1>
-
-<%= render "form", favorite_joke: @favorite_joke %>
-
-<br>
-
-<div>
-  <%= link_to "Back to favorite jokes", favorite_jokes_path %>
-</div>
+<%= turbo_frame_tag "joke" do %>
+  <%= render "joke", favorite_joke: @favorite_joke %>
+<% end %>

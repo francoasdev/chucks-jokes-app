@@ -1,37 +1,11 @@
-<%= form_with(model: favorite_joke) do |form| %>
-  <% if favorite_joke.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(favorite_joke.errors.count, "error") %> prohibited this favorite_joke from being saved:</h2>
-
-      <ul>
-        <% favorite_joke.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :value, style: "display: block" %>
-    <%= form.text_field :value %>
-  </div>
-
-  <div>
-    <%= form.label :icon_url, style: "display: block" %>
-    <%= form.text_field :icon_url %>
-  </div>
-
-  <div>
-    <%= form.label :joke_id, style: "display: block" %>
-    <%= form.text_field :joke_id %>
-  </div>
-
-  <div>
-    <%= form.label :url, style: "display: block" %>
-    <%= form.text_field :url %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+<div class="text-center">
+<%= form_for @favorite_joke do |form| %>
+    <%= form.hidden_field :value, value: @joke['value'], style: "display: block" %>
+    <%= form.hidden_field :icon_url, value: @joke['icon_url'], style: "display: block" %>
+    <%= form.hidden_field :joke_id, value: @joke['joke_id'], style: "display: block" %>
+    <%= form.hidden_field :url, value: @joke['url'], style: "display: block" %>
+    <%= form.hidden_field :user_id, value: current_user.id, style: "display: block" %>
+    <%= form.submit "Save favorite joke", class: "btn btn-primary" %>
   </div>
 <% end %>
+</div>

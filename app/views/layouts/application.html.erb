@@ -4,11 +4,13 @@
     <%= render 'shared/head' %>
   </head>
 
-  <body class="d-flex flex-column h-100">
+  <body class="d-flex flex-column h-100 gradient-custom">
     <main class="flex-shrink-0"> 
       <%= render 'shared/navbar' %>
 
       <div class="container mt-4 mx-auto">
+        <%= turbo_frame_tag "joke" %>
+        <%= turbo_frame_tag "favorite_joke" %>
         <%= yield %>
       </div>
     </main>

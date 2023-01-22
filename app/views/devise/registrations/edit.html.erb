@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row text-center m-auto" style="max-width: 330px; padding: 15px">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: { turbo: false }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="text-center fw-bold"><p id="alert"><%= alert %></p></div>
 
       <%= image_tag("chuck.jpg", class: "mb-4", style:"max-width:150px") %>
       <h1 class="h3 mb-3 fw-normal">Edit User</h1>

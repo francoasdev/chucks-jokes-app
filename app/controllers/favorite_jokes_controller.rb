@@ -4,18 +4,7 @@ class FavoriteJokesController < ApplicationController
 
   # GET /favorite_jokes or /favorite_jokes.json
   def index
-    @favorite_jokes = FavoriteJoke.all
-  end
-
-  def favorite
-    @favorite_joke = FavoriteJoke.new(favorite_joke_params)
-    respond_to do |format|
-      if @favorite_joke.save
-        format.turbo_stream { render partial: 'favorite_jokes/favorite', locals: { favorite_joke: @favorite_joke } }
-      else
-        format.json { render json: @favorite_joke.errors, status: :unprocessable_entity }
-      end
-    end
+    @favorite_jokes = FavoriteJoke.all.order(id: :desc)
   end
 
   # GET /favorite_jokes/1 or /favorite_jokes/1.json
